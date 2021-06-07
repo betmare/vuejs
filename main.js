@@ -39,15 +39,16 @@ Vue.component('product', {
             class="color-box" :style="{ backgroundColor: variant.variantColor }"
              @mouseover="updateProduct(index)">
         </div>
+        <h2>Sizes</h2>
         <ul>
           <li v-for="size in sizes">
             {{ size }}
           </li>
         </ul>
         <a :href="link" target="_blank">More Products like this</a>
-        <div>
-          <button @click="addToCart" :disabled="!inStock" :class="{disabledButton: !inStock}">Add to Cart</button>
-          <button @click="removeFromCart" :disabled="cartEmpty" :class="{disabledButton: cartEmpty}">Remove from Cart</button>
+        <div class="flex">
+          <button @click="addToCart" :disabled="!inStock" class="button-app" :class="{disabledButton: !inStock}">Add to Cart</button>
+          <button @click="removeFromCart" :disabled="cartEmpty" class="button-app" :class="{disabledButton: cartEmpty}">Remove from Cart</button>
         </div>
       </div>
     </div>`,
